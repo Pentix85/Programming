@@ -1,0 +1,180 @@
+<meta charset="UTF-8">
+<script>
+
+	//Банковская программа
+
+	// var depositAmount = +prompt("Введите сумму вклада:");
+	// var depositInterest = +prompt("Введите процент по вкладу:");
+	// var years = 5;
+
+	// var result = "Изменение размера вклада по годам: \n";
+
+	// for (var yearsTime = 1; yearsTime<=years; yearsTime++) {
+	// 	depositAmount=depositAmount+(depositAmount*depositInterest/100);
+	// 	result += yearsTime + " год: " + depositAmount.toFixed(2) + "\n";
+	// }
+
+	// alert(result);
+
+
+	//Игра в загадки
+	// alert("Поиграем в загадки!");
+
+	// var userAnswer = 0;
+	// var userAnswerRight = "Поздравляем, вы ответили правильно!";
+	// var userAnswerMisstake = "Вы ответили неправильно!";
+	// var riddleNumber = 1;
+
+	// alert("Загадка №" + riddleNumber);
+
+	// var riddle = prompt("Зимой и летом, одним цветом. Что это?");
+	// riddle = riddle.toLowerCase();
+
+	// if ((riddle == "елка") || (riddle == "ёлка")) {
+	// 	alert(userAnswerRight);
+	// 	userAnswer++;
+	// } else {
+	// 	alert(userAnswerMisstake);
+	// }
+
+	// riddleNumber++;
+
+	// alert("Следуюзая загадка №" + riddleNumber);
+
+	// var riddle0 = prompt("Сижу на том, не ведаю на чем. Что это?");
+	// riddle0 = riddle0.toLowerCase();
+
+	// if ((riddle0 == "шапка")) {
+	// 	alert(userAnswerRight);
+	// 	userAnswer++;
+	// } else {
+	// 	alert(userAnswerMisstake);
+	// }
+
+	// riddleNumber++;
+
+	// alert("Следуюзая загадка №" + riddleNumber);
+
+	// var riddle1 = prompt("Висит груша, нельзя скушать. Что это?");
+	// riddle1 = riddle1.toLowerCase();
+
+	// if ((riddle1 == "лампочка")) {
+	// 	alert(userAnswerRight);
+	// 	userAnswer++;
+	// } else {
+	// 	alert(userAnswerMisstake);
+	// }
+
+	// riddleNumber++;
+
+	// alert("Следуюзая загадка №" + riddleNumber);
+
+	// var riddle2 = prompt("Днем не видно, ночью видно. Что это?");
+	// riddle2 = riddle2.toLowerCase();
+
+	// if ((riddle2 == "звезды")) {
+	// 	alert(userAnswerRight);
+	// 	userAnswer++;
+	// } else {
+	// 	alert(userAnswerMisstake);
+	// }
+
+	// alert("Правильных ответов: " + userAnswer);
+
+	// Игра угадай число
+
+	var Player1 = prompt("Введите имя игрока №1: ");
+	var Player2 = prompt("Введите имя игрока №2: ");
+	var playerNumber = Player1;
+
+	while(true) {
+		var answer = parseInt(Math.random()*100);
+		var playerAnswer = prompt(playerNumber + " Угадайте число от 0 до 100 \nДля выхода нажмите q");
+
+		if(playerAnswer == "q") {
+			break;
+		}
+
+		playerAnswer = parseInt(playerAnswer);
+
+ 		if (playerAnswer == answer) {
+			alert("Поздравляем " + playerNumber + " вы угадали!");
+		} else if (playerAnswer > answer) {
+			alert("Вы ввели слишком большое число!");
+		} else if (playerAnswer < answer) {
+			alert("Вы ввели слишком маленькое число!");
+		} else if (isNaN(playerAnswer)) {
+			alert("Вы ввели не число! Введите цифры!");
+		}
+			
+		if(playerNumber == Player1) {
+			playerNumber = Player2;
+		} else {
+			playerNumber = Player1;
+		}
+		
+	} 
+
+	// alert("Количество побед " + Player1 + ": " + correctAnswerPlayer1 +"\n" + "Количество побед " + Player2 + ": " + correctAnswerPlayer2);		
+
+	// alert("Правильный ответ был " + answer + "\n" + "У Вас осталось " + (maxTryCount-tryCount) + " попыток!");
+
+		
+
+
+
+		// do {
+		// 	var n = +prompt("Enter positive number: ");
+		// } while (isNaN(n) || n<0)
+			
+		// var sum = 0;
+		// for (var i = 0; i <= n; i++) {
+		// 	sum = sum +=i;
+		// 	document.write(" " + i + " " + sum + "<br>");
+		// }
+	
+
+
+
+	// var i = 0;
+
+	// for(var i = 0; i<1000; i++) {
+	// 	document.write("Hellow! <br/>");
+	// }
+	
+	// alert("Which number is greater!");
+	// var a = +prompt("Enter first number: ");
+	// var b = +prompt("Enter second number: ");
+	// var max = a;
+
+	// if (a<b) {
+	// 	max=b;
+	// }
+
+	// alert(max);
+
+	// if ((a>b)) {
+	// 	alert(a + " greater then " + b);
+	// } else if (a==b){
+	// 	alert("The numbers are equal");
+	// } else {
+	// 	alert(b + " greater then " + a);
+	// }
+
+
+	// //Converter
+	// var dollar = parseInt(prompt("Введите цену доллара в рублях: "));
+	// var euro = parseInt(prompt("Введите цену евро в рублях: "));
+	// var rub = parseInt(prompt("Введите количество рублей: "));
+	// var rubDollar = rub/dollar;
+	// var rubEuro = rub/euro;
+	// alert("Колиество долларов: " + rubDollar.toFixed(2) + "\n" + "Колиество евро: " + rubEuro.toFixed(2));
+
+	// //Trapeze
+	// var upperBaze = +prompt("Введите длинну верхнего основания трапеции: ");
+	// var lowerBaze = +prompt("Введите длинну нижнего основания трапеции: ");
+	// var height = +prompt("Введите высоту трапеции: ");
+	// alert("Площадь трапеции: " + ((upperBaze+lowerBaze)/2)*height);
+
+
+</script>
