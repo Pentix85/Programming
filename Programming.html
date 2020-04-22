@@ -1,6 +1,154 @@
 <meta charset="UTF-8">
 <script>
 
+	function getRandomNumber(a) {
+		var b = parseInt(Math.random()*a);
+		return b;
+	}
+
+	function arrayMaxSize(a) {
+		c = [];
+		for(i=0; i<a; i++) {
+			c.push(getRandomNumber(arrayMaxNumber));
+		}
+		return c;
+	}
+
+	function summary(a) {
+		var z = 0;
+		for(i=0; i<a.length; i++) {
+			z=z+a[i];
+		}
+		return z;
+	}
+
+	function arrayMost(a) {
+		var z = 0;
+		for(i=0; i<a.length; i++) {
+			if (z<a[i]) {
+				z=a[i];
+			}
+		}
+		return z;
+	}
+
+	function arrayLeast(a) {
+		var z = a[0];
+		for(i=0; i<a.length; i++) {
+			if (z>a[i]) {
+				z = a[i];
+			}
+		}
+		return z;
+	}
+
+	function arrayHonestNumbers(a) {
+		var k =[];
+		for(i=0; i<a.length; i++) {
+			if ((a[i]%2)==0) {
+				k.push(a[i]);
+			}
+		}
+		return k;
+	}
+	
+	var array = [];
+	var arrayMaxNumber = +prompt("Введите максимальное число в массиве: ");
+	var arraySize = +prompt("Введите размер массива: ");
+	var array = arrayMaxSize(arraySize);
+	alert("Числа массива: " + array);
+
+	var arraySummary = summary(array);
+	alert("Сумма чисел массива: " + arraySummary);
+
+	var maxNumber = arrayMost(array);
+	alert("Максимальное число в массиве: " + maxNumber);
+
+	var leastNumber = arrayLeast(array);
+	alert("Наименьшее число в массиве: " + leastNumber);
+
+	var honestNumbers = arrayHonestNumbers(array);
+	alert("Четные числа массива: " + honestNumbers);
+	
+	
+	// function askForWords(words) {
+	// 	while(words.length !=0) {
+
+	// 		var randomNumber = parseInt(Math.random () * words.length);
+	// 		var userTranslate = prompt("Как переводится слово: " + words[randomNumber][0]);
+	// 		userTranslate = userTranslate.toLowerCase();
+
+	// 		if(userTranslate == words[randomNumber][1]) {
+	// 			alert("Правильно!");
+	// 			words.splice(randomNumber, 1);
+	// 		} else {
+	// 			alert("Непрвильно! Правильный ответ: " + words[randomNumber][1]);
+	// 		}
+	// 	}
+	// }
+
+	// var easyWords = [
+	// 	["food", "еда"],
+	// 	["bike", "велосипед"],
+	// 	["apple", "яблоко"],
+	// 	["do", "делать"],
+	// 	["mean", "иметь в виду"]
+	// ];
+
+	// askForWords(easyWords);
+
+	// alert("Поздравляем, вы запомнили все слова! Переходим на новый уровень!");
+
+	// var hardWords = [
+	// 	["chainsaw", "бензопила"],
+	// 	["squirrel", "белка"],	
+	// 	["castle", "замок"],
+	// 	["homeland", "родина"],
+	// 	["sewerage", "канализация"],
+	// 	["bottom", "дно"]
+	// ];
+
+	// askForWords(hardWords);
+
+	// Тренировка памяти
+
+	// function compareAnswers(userAnswer, answer) {
+	// 		if (userAnswer==answer) {
+	// 		alert("Верно!");
+	// 	} else {
+	// 		alert("Неправильно. Правильный ответ " + answer);
+	// 	}
+	// }
+
+	// function getRandomNumber(max){
+	// 	return Math.round(Math.random() * max);
+	// }
+
+	// function getRandomNumberArray(length) {
+	// 	var arr = [];
+	// 	for(var i = 0; i < length; i++) {
+	// 		var randomNumber = getRandomNumber(100);
+	// 		arr.push(randomNumber);
+	// 	}
+
+	// 	return arr;
+	// }
+
+	// var numbers = getRandomNumberArray(5);
+
+	// alert("Запомни числа и их порядок" + numbers);
+
+	// var userAnswer = +prompt("Каким было первое число?");
+	// compareAnswers(userAnswer,numbers[0]);
+	
+	// userAnswer = +prompt("Каким было последнее число?");
+	// compareAnswers(userAnswer,numbers[numbers.length - 1]);
+
+	// var n = getRandomNumber(numbers.length - 1);
+	// userAnswer = +prompt("А как насчет числа под номером " + (n+1) + " ?");
+	// compareAnswers(userAnswer,numbers[n]);
+
+
 	//Банковская программа
 
 	// var depositAmount = +prompt("Введите сумму вклада:");
@@ -83,45 +231,41 @@
 
 	// Игра угадай число
 
-	var Player1 = prompt("Введите имя игрока №1: ");
-	var Player2 = prompt("Введите имя игрока №2: ");
-	var playerNumber = Player1;
+	// var Player1 = prompt("Введите имя игрока №1: ");
+	// var Player2 = prompt("Введите имя игрока №2: ");
+	// var playerNumber = Player1;
 
-	var answer = parseInt(Math.random()*100);
+	// var answer = parseInt(Math.random()*100);
 
-	while(true) {
-		var answer = parseInt(Math.random()*100);
-		var playerAnswer = prompt(playerNumber + " Угадайте число от 0 до 100 \nДля выхода нажмите q");
+	// while(true) {
+	// 	var answer = parseInt(Math.random()*100);
+	// 	var playerAnswer = prompt(playerNumber + " Угадайте число от 0 до 100 \nДля выхода нажмите q");
 
-		if(playerAnswer == "q") {
-			break;
-		}
+	// 	if(playerAnswer == "q") {
+	// 		break;
+	// 	}
 
-		playerAnswer = parseInt(playerAnswer);
+	// 	playerAnswer = parseInt(playerAnswer);
 
- 		if (playerAnswer == answer) {
-			alert("Поздравляем " + playerNumber + " вы угадали!");
-		} else if (playerAnswer > answer) {
-			alert("Вы ввели слишком большое число!");
-		} else if (playerAnswer < answer) {
-			alert("Вы ввели слишком маленькое число!");
-		} else if (isNaN(playerAnswer)) {
-			alert("Вы ввели не число! Введите цифры!");
-		}
+ // 		if (playerAnswer == answer) {
+	// 		alert("Поздравляем " + playerNumber + " вы угадали!");
+	// 	} else if (playerAnswer > answer) {
+	// 		alert("Вы ввели слишком большое число!");
+	// 	} else if (playerAnswer < answer) {
+	// 		alert("Вы ввели слишком маленькое число!");
+	// 	} else if (isNaN(playerAnswer)) {
+	// 		alert("Вы ввели не число! Введите цифры!");
+	// 	}
 			
-		if(playerNumber == Player1) {
-			playerNumber = Player2;
-		} else {
-			playerNumber = Player1;
-		}
+	// 	if(playerNumber == Player1) {
+	// 		playerNumber = Player2;
+	// 	} else {
+	// 		playerNumber = Player1;
+	// 	}
 		
-	} 
+	// } 
 
 	// alert("Количество побед " + Player1 + ": " + correctAnswerPlayer1 +"\n" + "Количество побед " + Player2 + ": " + correctAnswerPlayer2);		
-
-	// alert("Правильный ответ был " + answer + "\n" + "У Вас осталось " + (maxTryCount-tryCount) + " попыток!");
-
-		
 
 
 
