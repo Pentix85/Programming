@@ -45,7 +45,11 @@ nav a {
 }
 
 nav a:hover {
-	color: black;
+	color: red;
+}
+
+.activ {
+	color: red;
 }
 
 main {
